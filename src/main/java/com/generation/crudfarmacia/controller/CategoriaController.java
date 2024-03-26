@@ -33,9 +33,9 @@ public class CategoriaController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/categoria/{nome}")
-    public ResponseEntity<List<Categoria>> getByNome(@Valid @PathVariable(name = "nome") String nome) {
-        return ResponseEntity.ok(categoriaRepository.findByNomeCategoriaContainingIgnoreCase(nome));
+    @GetMapping("/categoria/{nomeCategoria}")
+    public ResponseEntity<List<Categoria>> getByNome(@Valid @PathVariable(name = "nomeCategoria") String nomeCategoria) {
+        return ResponseEntity.ok(categoriaRepository.findByNomeCategoriaContainingIgnoreCase(nomeCategoria));
     }
 
     @PostMapping
